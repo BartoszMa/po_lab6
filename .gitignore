@@ -1,0 +1,16 @@
+node_modules/
+
+dist/
+
+.env.local
+
+*.log
+
+.vite/
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
