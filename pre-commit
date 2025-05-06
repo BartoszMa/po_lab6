@@ -1,0 +1,20 @@
+#!/bin/sh
+
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|jsx|ts|tsx)$')
+
+if [ -z "$FILES" ]; then
+  echo "No JS/TS files staged."
+  exit 0
+fi
+
+echo "Running ESLint on staged files:"
+echo "$FILES"
+
+npx eslint $FILES
+
+if [ $? -ne 0 ]; then
+  echo "❌ ESLint failed. Commit aborted."
+  exit 1
+fi
+
+echo "ESLint passed."
