@@ -27,7 +27,7 @@ function Payments() {
             <h2>Płatności</h2>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Kwota:
+                    Kwota:{" "}
                     <input
                         type="number"
                         step="0.01"
@@ -36,7 +36,7 @@ function Payments() {
                     />
                 </label>
                 <label>
-                    Opłacono:
+                    Opłacono:{" "}
                     <input
                         type="checkbox"
                         checked={isPayed}
